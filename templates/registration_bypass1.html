@@ -1,0 +1,218 @@
+{% extends "includes/base.html" %}
+{% load static %}
+{% block content %}
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-lg-5 d-none d-lg-block bg-register-image"><img src=" {% static "assets/android-chrome-512x512.png" %} " class="img-fluid" alt="TracKaPSITElogo"></div>
+                    <div class="col-lg-7">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Individual Membership Registration</h1>
+                            </div>
+
+                            <form class="user" method="post" action=" {% url "registration_bypass1" %} " enctype="multipart/form-data" onsubmit="return validateForm()" >
+                               {% csrf_token %}
+                               {% include 'includes/messages.html' %}
+                               <fieldset>
+                                <legend>For Access</legend>
+                            <div class="form-group row">
+                                
+                                <label for="is_superuser">Is Superuser?</label>
+                                <input type="number" class="form-control form-control-user" id="is_superuser"
+                                    placeholder="Enter 1 here(Not Superuser)" name="is_superuser" min="0" max="1" required/>
+
+                                <label for="is_active">Is Active?</label>
+                                <input type="number" class="form-control form-control-user" id="is_active"
+                                    placeholder="Enter 0 here(Not Active)" name="is_active" min="0" max="0" required/>
+
+                                <label for="user_type">User Type?</label>
+                                <input type="number" class="form-control form-control-user" id="user_type"
+                                    placeholder="Enter 3 here (Member Type)" name="user_type" min="0" max="1" required/>
+                            </div>
+                        </fieldset>
+
+                            <fieldset>
+                                <legend>Member Information</legend>
+                            <div class="form-group">
+                                <label for="membership_type">Membership Type</label>
+                                <select class="form-control" id="membership_type" name="membership_type" >
+                                    <option value="" disabled selected>Select Type</option>
+                                    <option value="New">New</option>
+                                    <option value="Renew">Renew</option>
+                                </select>
+                                
+                                <label for="member_type">Member Type</label>
+                                <select class="form-control" id="member_type" name="member_type" >
+                                    <option value="" disabled selected>Select Type</option>
+                                    <option value="individual">Individual</option>
+                                    <option value="institutional">Institutional</option>
+                                    <option value="enterprise">Enterprise</option>
+                                </select>
+                                
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="form-group">
+                                    <label for="salutation">Salutation</label>
+                                    <select class="form-control" id="salutation" name="salutation" >
+                                        <option value="" disabled selected>Select Salutation</option>
+                                        <option value="Mr">Mr.</option>
+                                        <option value="Ms">Ms.</option>
+                                        <option value="Mrs">Mrs.</option>
+                                        <option value="Dr">Dr.</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <label for="first_name">First Name</label>
+                                    <input type="text" style="text-transform: uppercase;" class="form-control form-control-user" id="first_name"
+                                        placeholder="First Name" name="first_name" required/>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="last_name">Last Name</label>
+                                    <input type="text" style="text-transform: uppercase;" class="form-control form-control-user" id="last_name"
+                                        placeholder="Last Name" name="last_name" required/>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="middle_name">Middle Name</label>
+                                    <input type="text" style="text-transform: uppercase;" class="form-control form-control-user" id="middle_name"
+                                        placeholder="Middle Name" name="middle_name"/>
+                                </div>
+                            </div>
+
+                            {% comment %} 
+                            <div class="form-group">
+                                <label>Profile Picture</label>
+                                <input type="file" class="form-control" accept=".jpg, .jpeg, .png" name="profile_pic"/>
+                             </div> {% endcomment %}
+
+                             <div class="form-group">
+                                <label for="position">Position</label>
+                                <input type="text" class="form-control form-control-user" id="position"
+                                    placeholder="Position" name="position" required/>
+                            </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" class="form-control form-control-user" id="email"
+                                        placeholder="Email Address" name="email" required/>
+                                </div>
+
+                                <div class="form-group">
+                                    
+                                <label for="contact_no">Contact Number</label>
+                                    <input type="text" class="form-control form-control-user" id="contact_no"
+                                        placeholder="Contact No. Ex. 09123456789" name="contact_no" maxlength="11" required/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="birthdate">Birthdate</label>
+                                    <input type="datetime-local" id="birthdate" name="birthdate" required/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="fbProfileLink">Facebook Profile Link:</label>
+                                    <input type="url" id="fbProfileLink" name="fbProfileLink" placeholder="https://www.facebook.com/yourprofile" required>
+                                </div>
+                                <div class="form-group">
+                                <label for="fileUpload">Proof of Payment:</label>
+                                <input type="file" id="fileUpload" name="fileUpload" accept=".pdf, .jpg, .jpeg, .png, .gif" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="payment_date">Payment Date</label>
+                                    <input type="datetime-local" id="payment_date" name="payment_date" required/>
+                                </div>
+                                
+                            </fieldset>
+                            <fieldset>
+                                <legend>Login Information</legend>
+                                <div class="form-group">
+                                    <label for="username">Username</label>
+                                    <input type="username" class="form-control form-control-user" id="exampleInputUsername"
+                                        placeholder="Username" name="username" required/>
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control form-control-user"
+                                            id="exampleInputPassword" placeholder="Type 'Sample#01'" name="password" required/>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="repeatpassword">Repeat Password</label>
+                                        <input type="password" class="form-control form-control-user"
+                                            id="repeatpassword" placeholder="Type 'Sample#01'" name="repeatpassword" required/>
+                                            <label id="passwordError" class="form-label text-danger d-none">Passwords do not match.</label>
+                                        </div>
+                                </div>
+                            </fieldset>
+                                <div class="col-sm mb-3">
+                                    <div class="form-group">
+                                        <label>
+                                            <input type="radio" name="membershipAgreement" value="accepted" required>
+                                            I accept the terms of membership.
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="membershipAgreement" value="not_accepted" required>
+                                            I do not accept the terms of membership.
+                                        </label>
+                                    </div>
+                                    <div class="agreement">
+                                        If accepted for membership, I agree to comply with the requirements of the By-Laws, and all regulations adopted by the Society with full knowledge of the responsibility imposed upon me.
+                                    </div>
+                                  </div>
+
+                                <button id="registerButton" class="btn btn-primary btn-user btn-block" type="submit">Register</button>
+                                {% comment "" %}
+                                <hr>
+                                <a href="index.html" class="btn btn-google btn-user btn-block">
+                                    <i class="fab fa-google fa-fw"></i> Register with Google
+                                </a>
+                                <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                                    <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
+                                </a>
+                                {% endcomment %}
+                            </form>
+                            
+                            <hr>
+                            <div class="text-center">
+                                <a class="small" href="forgot_password.html">Forgot Password?</a>
+                            </div>
+                            <div class="text-center">
+                                <a class="small" href="{% url "login" %}">Already have an account? Login!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        function validateForm() {
+            var checkbox = document.getElementById("termsCheckbox");
+            var password = document.getElementById("password").value;
+            var repeatPassword = document.getElementById("repeatpassword").value;
+            var passwordError = document.getElementById("passwordError");
+  
+            // Validate checkbox
+            if (!checkbox.checked) {
+                alert("You must agree to the terms of service before registering.");
+                return false;
+            }
+  
+            // Validate passwords
+            if (password !== repeatPassword) {
+                passwordError.classList.remove("d-none");
+                return false;
+            } else {
+                passwordError.classList.add("d-none");
+            }
+  
+            return true;
+        }
+    </script>
+    
+
+</html>
+
+{% endblock %}

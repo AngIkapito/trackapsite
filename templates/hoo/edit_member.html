@@ -1,0 +1,76 @@
+{% extends "includes/base.html" %}
+{% load static %}
+{% block content %}
+<!-- DITO KA MAS START MAGLAGAY NG LAMAN NG BODY -->
+
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Member List</h1>
+</div>
+
+<form method="post" action="{% url 'update_member' %}" >
+   {% csrf_token %}
+      <div class="col-12">
+         <h5 class="form-title"><span>Edit Member</span></h5>
+      </div>
+
+      {% include 'includes/messages.html' %}
+
+
+      <div class="col-sm-11">
+         <div class="form-group">
+
+    <div class="form-group row">
+        <div class="col-sm-6">
+            <label for="last_name">Last Name</label>
+            <input type="text" style="text-transform: uppercase;font-size: 1.1rem;" class="form-control form-control-user" id="last_name"
+                placeholder="Last Name" name="last_name"  value= "{% for i in user %}{{i.last_name}}{% endfor %}"  required/>
+        </div>
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            <label for="first_name">First Name</label>
+            <input type="text" style="text-transform: uppercase;font-size: 1.1rem;" class="form-control form-control-user" id="first_name"
+                placeholder="First Name" name="first_name" value= "{% for i in user %}{{i.first_name}}{% endfor %}" required/>
+        </div>
+        
+    </div>
+{% comment %} Fields for Member/User information {% endcomment %}
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" class="form-control form-control-user" id="email"
+            placeholder="Email Address" name="email" style="font-size: 1.1rem;"  value= "{% for i in user %}{{i.email}}{% endfor %}" required/>
+    </div>
+
+    <div class="form-group">
+        <label for="contact_no">Contact Number</label>
+        <input type="text" class="form-control form-control-user" id="contact_no"
+            placeholder="Contact No. Ex. 09123456789" name="contact_no" maxlength="11" style="font-size: 1.1rem;"  value= "{% for i in user %}{{i.contact_no}}{% endfor %}" required/>
+    </div>
+
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="username" class="form-control form-control-user" id="exampleInputUsername"
+            placeholder="Username" name="username" style="font-size: 1.1rem;"  value= "{% for i in user %}{{i.username}}{% endfor %}" required/>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            <label for="password">Password</label>
+            <input type="password" class="form-control form-control-user"
+                id="exampleInputPassword" placeholder="Password" name="password" style="font-size: 1.1rem;"/>
+        </div>
+        <div class="col-sm-6">
+            <label for="repeatpassword">Repeat Password</label>
+            <input type="password" class="form-control form-control-user"
+                id="repeatpassword" placeholder="Repeat Password" name="repeatpassword" style="font-size: 1.1rem;"/>
+                <label id="passwordError" class="form-label text-danger d-none">Passwords do not match.</label>
+            </div>
+    </div>
+
+      <div class="col-12">
+         <button type="submit" class="btn btn-primary">Update Member</button>
+      </div>
+    </div>
+</div>
+</form>
+
+<!-- DITO ANG END NG BODY. WAG KA LALAMPAS -->
+{% endblock %}
