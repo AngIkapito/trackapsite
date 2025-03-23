@@ -129,13 +129,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'  # URL to access static files
 
-STATIC_ROOT = '/home/trackaps/trackapsite/trackapsite/static'
+# The directory where static files will be collected
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # This is where collectstatic will gather files
 
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR,'static')
-# ]
+# Additional directories to look for static files (optional)
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),  # This is where your static files are located
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
