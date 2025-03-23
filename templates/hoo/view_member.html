@@ -1,0 +1,30 @@
+{% extends "hoo/home.html" %}
+{% block content %}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    
+<!-- DITO KA MAS START MAGLAGAY NG LAMAN NG BODY -->
+<!-- Page Heading -->
+
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Member List</h1>
+</div>
+
+{% comment %} <div class="d-sm-flex align-items-center justify-content-between mb-4"> {% endcomment %}
+    {% comment %} <div class="col-sm-6"> {% endcomment %}
+        <div class="form-group">
+            <label >Search Member by Firstname | Lastname | School </label>
+            <input type="text" id="search" class="form-control" placeholder="Search Member...">
+        </div>
+        {% comment %} </div> {% endcomment %}
+{% comment %} </div> {% endcomment %}
+
+{% include "hoo/includes/member_list.html" %}
+
+   <!-- DITO ANG END NG BODY. WAG KA LALAMPAS -->
+
+</div>
+<!-- /.container-fluid -->
+{% endblock  %}
+

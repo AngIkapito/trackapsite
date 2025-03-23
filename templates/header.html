@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top" style="background-color: rgba(55, 129, 204, 0.8);">
+    {% load static %}
+            <div class="container px-5">
+                <a class="navbar-brand" href=" {% url "home" %} "><img src="{% static "assets/trackapsitelogo.png" %}" width="130" height="37" alt="TracKaPSITElogo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="{% url "home" %}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url "announcement" %}">Announcements</a></li>
+                        <li class="nav-item"><a class="nav-link" href=" {% url "events" %} ">Events</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url "about" %}">About</a></li>
+                        {% comment "" %}<li class="nav-item"><a class="nav-link" href="{% url "registration" %}">Register</a></li>{% endcomment %}
+                        <li class="nav-item"><a class="nav-link" href="{% url "login" %}">Log In</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
