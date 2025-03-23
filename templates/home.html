@@ -1,4 +1,5 @@
 {% comment %} {% block 'template' %} {% endcomment %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,20 +9,92 @@
       <meta name="author" content="" />
       <title>TracKaPSITE</title>
       <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-      {% comment %} <!-- Font Awesome icons (free version) - USED in FOOTER-->
+       <!-- Font Awesome icons (free version) - USED in FOOTER-->
       <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-       {% endcomment %}
+       
       {% load static %}
       <link rel="stylesheet" href="{% static 'css/styles.css' %}">
       
     </head>
 
 <br><br><br><br>
-{% comment "" %}{% endcomment %}
+
 <body id="page-top">
   
   <!-- Navigation-->
   {% comment %} {% include "header.html" %} {% endcomment %}
+
+  <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>TracKaPSITE</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version) - USED in FOOTER-->
+        <!-- Google fonts-->
+        {% comment %} <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" /> {% endcomment %}
+        <!-- Core theme CSS (includes Bootstrap)-->
+        
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/sb-admin-2.css' %}">
+        {% comment  %} ITO YUNG CSS PARA SA ADMIN-USER SIDE
+         <link rel="stylesheet" href="{% static 'css/sb-admin-2.min.css' %}"> {% endcomment %}
+        
+      <style>
+
+        .video-container {
+          position: relative;
+          width: 100%; /* Full width */
+          padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+          height: 0;
+          overflow: hidden;
+        }
+
+      .video-container iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+      }
+      .welcome-title {
+        font-size: 3rem; /* Large font size */
+        color: #003366; /* Dark blue color */
+        text-align: center; /* Center the text */
+        margin-top: 50px; /* Space above */
+        margin-bottom: 20px; /* Space below */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    }
+    
+    .welcome-subtitle {
+        font-size: 1.5rem; /* Medium font size */
+        color: #666; /* Gray color */
+        text-align: center; /* Center the text */
+    }
+      </style>
+
+    </head>
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top" style="background-color: rgba(55, 129, 204, 0.8);">
+    {% load static %}
+            <div class="container px-5">
+                <a class="navbar-brand" href=" {% url "home" %} "><img src="{% static "assets/trackapsitelogo.png" %}" width="130" height="37" alt="TracKaPSITElogo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="">Announcements</a></li>
+                        <li class="nav-item"><a class="nav-link" href="">Events</a></li>
+                        <li class="nav-item"><a class="nav-link" href="">About</a></li>
+                        {% comment "" %}<li class="nav-item"><a class="nav-link" href="{% url "registration" %}">Register</a></li>{% endcomment %}
+                        <li class="nav-item"><a class="nav-link" href="">Log In</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
  <div class="container px-5 d-flex flex-column justify-content-center align-items-center" style="min-height: 100vh;max-width: 1000px; margin: 0 auto;">
 <!--AFTER NITO MAGLAGAY NG CONTENT-->
@@ -93,10 +166,7 @@
     <iframe width="100%" src="https://www.youtube.com/embed/fOHXk1_EniI?autoplay=1&mute=1" allow="autoplay; encrypted-media" frameborder="0" allowfullscreen style=""></iframe>
 </div> {% endcomment %}
 
-
-
 <br>
-
 
 <!--ADD MORE CONTENTS HERE, DYNAMIC -->
 
@@ -106,6 +176,95 @@
   {% comment "CENTERED DIV" %}{% endcomment %}
 
    <!-- Footer-->
+    
+
+<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+<!-- Remove the container if you want to extend the Footer to full width. -->
+<footer class="text-center text-white" style="background-color:#43a1ff;">
+    <!-- Grid container -->
+    <div class="container pt-4">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a
+          class="btn btn-link btn-floating btn-lg text-white m-1"
+          href="https://www.facebook.com/psiteregion3/?viewas=100000686899395"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+  
+        <!-- Google -->
+        <a
+          class="btn btn-link btn-floating btn-lg text-white m-1"
+          href="#!"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-google"></i
+        ></a>
+  
+       
+  
+        <!-- Linkedin -->
+        <a
+          class="btn btn-link btn-floating btn-lg text-white m-1"
+          href="#!"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <!-- Github -->
+         {% comment %}
+        
+<!-- Twitter -->
+        <a
+          class="btn btn-link btn-floating btn-lg text-dark m-1"
+          href="#!"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-twitter"></i
+        ></a>
+
+ <!-- Instagram -->
+        <a
+          class="btn btn-link btn-floating btn-lg text-dark m-1"
+          href="#!"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-instagram"></i
+        ></a>
+
+        <a
+          class="btn btn-link btn-floating btn-lg text-dark m-1"
+          href="#!"
+          role="button"
+          data-mdb-ripple-color="dark"
+          ><i class="fab fa-github"></i
+        ></a> 
+        {% endcomment %}
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center text-light p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      Copyright © 2025 
+      <a class="text-light" href="https://www.facebook.com/senseijoshopisyal">Joshua Tiongco</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+    
+  <!--ITO YUNG BUTTON NA NICCLICK PARA MAGSCROL ULIT PATAAS-->
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/sb-admin-2.css' %}">
+
+<a class="scroll-to-top rounded primary" href="#page-top" style="display: inline;">
+  <i class="fas fa-angle-up">
+    ::before
+  </i>
+</a>
+  <!-- End of .container -->
    {% comment %} {% include "footer.html" %} {% endcomment %}
    <!-- Bootstrap core JS-->
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -114,3 +273,5 @@
  </body>
  
 {% comment %} {% endblock %} {% endcomment %}
+
+</html>
