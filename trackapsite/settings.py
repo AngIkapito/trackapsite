@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-_$igd(xbu-&-$ixu$%jrpid@pp0_ntvye&2d!-y$-)13%u6a8j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['trackapsite.org']
+ALLOWED_HOSTS = ['trackapsite.org']
 
 
 # Application definition
