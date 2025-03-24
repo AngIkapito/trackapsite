@@ -140,19 +140,19 @@ USE_TZ = True
 #     os.path.join(BASE_DIR, 'static'),  # This is where your static files are located
 # ]
 
-# STATIC_URL = 'static/'
-# STATIC_ROOT='/home/trackaps/trackapsite/trackapsite/static'
+STATIC_URL = 'static/'
+STATIC_ROOT='/home/trackaps/trackapsite/trackapsite/static'
 
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR,'static')
 # ]
 
-STATIC_URL = '/static/'  # Ensure this starts with a slash
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # It's common to use 'staticfiles' for collected static files
+# STATIC_URL = '/static/'  # Ensure this starts with a slash
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # It's common to use 'staticfiles' for collected static files
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),  # This is where your app's static files are located
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'),  # This is where your app's static files are located
+# ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
