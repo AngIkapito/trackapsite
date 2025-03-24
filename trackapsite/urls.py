@@ -23,6 +23,6 @@ from .import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     
-    path('', views.HOME, name='home'),
+    path('', views.BASE, name='base'),
     
 ]+ static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)

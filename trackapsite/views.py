@@ -6,6 +6,9 @@ from django.shortcuts import render,redirect, HttpResponse
 # from app.models import CustomUser, Officer, Member, School_Year
 #from django.http import JsonResponse
 #from app.models import Sector, District, Teacher, Learning_Center, School_Year, ProgramCategory, ProgramType, Province, Municipality, Barangay
+ 
+# def HOME(request):
+#     return render(request,'home.html')
     
-def HOME(request):
-    return render(request,'home.html')
+def BASE(request):
+    return render(request,'base.html')
