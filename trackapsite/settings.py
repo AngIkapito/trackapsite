@@ -15,6 +15,13 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'alspampanga03@gmail.com'
+# EMAIL_HOST_PASSWORD = 'fesy jcal peoq wpia'
+# EMAIL_USE_TLS = True
+# DEFAULT_FROM_EMAIL = 'alspampanga03@gmail.com'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -129,32 +136,22 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-# # Static files (CSS, JavaScript, Images)
-# STATIC_URL = '/static/'  # URL to access static files
 
-# # The directory where static files will be collected
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # This is where collectstatic will gather files
+STATIC_URL = 'static/'
+STATIC_ROOT='/static'
 
-# Additional directories to look for static files (optional)
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static'),  # This is where your static files are located
-# ]
-
-STATIC_URL = '/static/'
-STATIC_ROOT='static'
-
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR,'static')
-# ]
-
-# STATIC_URL = '/static/'  # Ensure this starts with a slash
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # It's common to use 'staticfiles' for collected static files
-
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static'),  # This is where your app's static files are located
-# ]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'static')
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# AUTH_USER_MODEL = 'app.CustomUser'
+
+# AUTHENTICATION_BACKENDS = [
+#     'app.backend.EmailBackEnd',  # Replace 'yourapp' with your actual app name
+#     'django.contrib.auth.backends.ModelBackend',  # Default backend
+# ]
