@@ -140,7 +140,7 @@ USE_TZ = True
 # MEDIA_URL = '/media/'
 
 STATIC_URL = 'static/'
-STATIC_ROOT = '/home/trackaps/trackapsite/static'
+STATIC_ROOT = '/home/trackaps/trackapsite/trackapsite/static'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static')
