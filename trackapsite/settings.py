@@ -136,26 +136,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-# STATIC_URL = 'static/'
-# STATIC_ROOT='/home/trackaps/trackapsite/static'
-
-# STATIC_URL = '/static/'
-
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static'),  # This is where your development static files are located
-# ]
-
-# STATIC_ROOT = '/home/trackaps/trackapsite/trackapsite/static'  # Use a separate directory for collected static files
-
 # URL to serve static files
-STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
 
-# Directory where static files will be collected for production
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Use a separate directory for collected static files
+STATIC_URL = 'static/'
+STATIC_ROOT = '/static'
 
-# Additional directories where Django will look for static files in development
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),  # This is where your development static files are located
+    os.path.join(BASE_DIR,'static')
 ]
 
 # STATIC_URL = '/static/'
