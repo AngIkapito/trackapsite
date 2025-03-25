@@ -10,5 +10,5 @@ from django.shortcuts import render,redirect, HttpResponse
 # def HOME(request):
 #     return render(request,'home.html')
     
-def BASE(request):
-    return render(request,'base.html')
+def HOME(request):
+    return render(request,'home.html')
