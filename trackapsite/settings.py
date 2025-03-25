@@ -81,18 +81,18 @@ WSGI_APPLICATION = 'trackapsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 #UNCOMMENT TO SYNC THRU  CLOUD
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'mysql.connector,django',
-#         'NAME': 'trackaps_trackapsite'
+#         'NAME': 'trackaps_trackapsite',
 #         'HOST': 'localhost',
 #         'PORT': '3306',
 #         'USER': 'trackaps_admin',
@@ -136,10 +136,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn","static_root")
 # STATIC_URL = 'static/'
 # STATIC_ROOT='/home/trackaps/trackapsite/static'
+
+STATIC_URL = '/static/'
+
+# STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn","static_root")
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static')
