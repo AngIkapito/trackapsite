@@ -140,15 +140,17 @@ USE_TZ = True
 # STATIC_ROOT='/home/trackaps/trackapsite/static'
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Use a separate directory for collected static files
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),  # This is where your development static files are located
+]
 
+# STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn","static_root")
 
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_ROOT='/home/trackaps/trackapsite/trackapsite/static'
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'staticfiles')
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR,'static')
+# ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
