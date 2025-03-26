@@ -33,8 +33,8 @@ SECRET_KEY = 'django-insecure-_$igd(xbu-&-$ixu$%jrpid@pp0_ntvye&2d!-y$-)13%u6a8j
 DEBUG = True
 
 # # ALLOWED_HOSTS = ['trackapsite.org']
+ALLOWED_HOSTS = ['trackapsite.org','127.0.0.1','127.0.0.1:8000']
 # ALLOWED_HOSTS = ['trackapsite.org','127.0.0.1','127.0.0.1:8000']
-ALLOWED_HOSTS = []
 
 
 # Application definition
